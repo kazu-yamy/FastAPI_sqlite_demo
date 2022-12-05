@@ -5,5 +5,5 @@ WORKDIR /app
 COPY ./requirements.txt /app/
 COPY ./app /app/
 
-RUN pip install --upgrade pip
-RUN pip install -r /app/requirements.txt
+RUN pip install --no-cache --upgrade pip
+RUN pip install --no-cache -r /app/requirements.txt
