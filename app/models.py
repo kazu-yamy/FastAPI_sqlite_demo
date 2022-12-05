@@ -16,12 +16,11 @@ class User(Base):
 class Item(Base):
     __tablename__ = "items"
     
-    id = Column(Integer, primary_key=True, index=True)
+    device_id = Column(Integer, primary_key=True, index=True)
     date = Column(String, index=True)
     time = Column(String, index=True)
-    device_id = Column(Integer, index=True)
     temp = Column(Float)
-    owner_id = Column(Integer, ForeignKey("users.id"))
+    owner_id = Column(Integer, ForeignKey("user.id"))
     
     owner = relationship("User", back_populates="items")
     
