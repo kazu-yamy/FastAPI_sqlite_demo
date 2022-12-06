@@ -20,7 +20,7 @@ class Item(Base):
     date = Column(String, index=True)
     time = Column(String, index=True)
     temp = Column(Float)
-    owner_id = Column(Integer, ForeignKey("user.id"))
+    owner_id = Column(Integer, ForeignKey("users.id"))
     
     owner = relationship("User", back_populates="items")
     
